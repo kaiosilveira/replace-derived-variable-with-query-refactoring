@@ -6,11 +6,7 @@ export class ProductionPlan {
   }
 
   get production() {
-    return this._initialProduction + this.calculatedProduction;
-  }
-
-  get calculatedProduction() {
-    return this._adjustments.reduce((sum, a) => sum + a.amount, 0);
+    return this._initialProduction + this._adjustments.reduce((sum, a) => sum + a.amount, 0);
   }
 
   applyAdjustment(anAdjustment) {
