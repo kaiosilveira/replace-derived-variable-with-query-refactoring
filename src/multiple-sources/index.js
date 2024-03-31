@@ -1,3 +1,5 @@
+import assert from 'node:assert';
+
 export class ProductionPlan {
   constructor(production) {
     this._initialProduction = production;
@@ -6,6 +8,7 @@ export class ProductionPlan {
   }
 
   get production() {
+    assert(this._productionAccumulator === this.calculatedProduction);
     return this._initialProduction + this._productionAccumulator;
   }
 
