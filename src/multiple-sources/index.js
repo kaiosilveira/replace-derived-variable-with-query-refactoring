@@ -1,7 +1,6 @@
 export class ProductionPlan {
   constructor(production) {
     this._initialProduction = production;
-    this._productionAccumulator = 0;
     this._adjustments = [];
   }
 
@@ -11,6 +10,5 @@ export class ProductionPlan {
 
   applyAdjustment(anAdjustment) {
     this._adjustments.push(anAdjustment);
-    this._productionAccumulator += anAdjustment.amount;
   }
 }
